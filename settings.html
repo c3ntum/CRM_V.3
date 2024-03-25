@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    body {
+        background: rgb(240, 248, 255, 0.7);
+        font-family: "Noto Sans", sans-serif;
+  
+    }
+    #code, #code a, #code p {
+    font-family:'Courier New', Courier, monospace;
+    font-size:11px;
+    display:inline;
+}
+
+    .container {  
+display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 50px auto auto auto auto;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "title title title title"
+    "company adress phone mail"
+    "website hourprice mwst bank"
+    "iban two three ."
+    ". . . .";
+}
+
+.company { grid-area: company; }
+.adress { grid-area: adress; }
+.phone { grid-area: phone; }
+.mail { grid-area: mail; }
+.website { grid-area: website; }
+.hourprice { grid-area: hourprice; }
+.mwst { grid-area: mwst; }
+.bank { grid-area: bank; }
+.iban { grid-area: iban; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.title { grid-area: title; }
+.headright { grid-area: headright; }
+
+.company, .adress, .phone, .mail, .website, .hourprice, .mwst, .bank, .iban, .title {
+    background-color:white;
+    border-radius:10px;
+    text-align:center;
+    padding:15px;
+}
+.title {
+    text-align:left;
+}
+
+.icon {
+    height:40px;
+}
+h1 {
+    font-size:18px;
+    line-height:0;
+}
+input {
+    font-size:11px;
+    cursor:not-allowed;
+}
+p {
+    font-size:11px;
+}
+hr {
+    border:none;
+    border-top: 1px solid black;
+}
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="title"><h1>Einstellungen</h1></div>
+        <div class="headright"></div>
+        <div class="company">
+            <img src="company.png" class="icon">
+            <p>Firma</p>
+            <input value="" id="company" disabled>
+        </div>
+        <div class="adress">
+            <img src="street.png" class="icon">
+            <p>Adresse</p>
+            <input value="" id="street" disabled>
+        </div>
+        <div class="phone">
+            <img src="phone.png" class="icon">
+            <p>Tel.</p>
+            <input value="" id="phone" disabled>
+        </div>
+        <div class="mail">
+            <img src="mail.png" class="icon">
+            <p>Mail</p>
+            <input value="" id="mail" disabled>
+        </div>
+        <div class="website">
+            <img src="www.png" class="icon">
+            <p>Website</p>
+            <input value="" id="www" disabled>
+        </div>
+        <div class="hourprice">
+            <img src="price.png" class="icon">
+            <p>Stundensatz</p>
+            <input value="" id="price" disabled>
+        </div>
+        <div class="mwst">
+            <img src="vat.png" class="icon">
+            <p>MwSt. Nr.</p>
+            <input value="" id="vat" disabled>
+        </div>
+        <div class="bank">
+            <img src="bank.png" class="icon">
+            <p>Bank</p>
+            <input value="" id="bank" disabled>
+        </div>
+        <div class="iban">
+            <img src="iban.png" class="icon">
+            <p>IBAN</p>
+            <input value="" id="iban" disabled>
+        </div>
+        <div class="two"></div>
+        <div class="three"></div>
+       
+      </div>
+      <div id="code" style="margin-left:15px;">
+        <p>&#169; 2024 c3ntum - </p><a>http://c3ntum.ch</a>
+    </div>
+<script src="settings.js"></script>   
+<script>
+document.getElementById("company").value= data[0].FirmenName;
+document.getElementById("street").value= data[0].Strasse + ' ' + data[0].PlzOrt;
+document.getElementById("phone").value= data[0].Tel;
+document.getElementById("mail").value= data[0].Mail;
+document.getElementById("www").value= data[0].Web;
+document.getElementById("price").value= hSatz;;
+document.getElementById("vat").value= data[0].Mwst;
+document.getElementById("bank").value= data[0].Bank;
+document.getElementById("iban").value= data[0].Iban;
+</script>    
+</body>
+</html>
